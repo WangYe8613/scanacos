@@ -1,0 +1,19 @@
+# nacos服务注册中心信息参数
+nacos:
+  instance:
+    hostname: localhost
+    port: 8848
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册中心地址
+        server-addr: ${nacos.instance.hostname}:${nacos.instance.port}
+  application:
+    # 服务名，对应service-id
+    name: nacos-sample-consumer
+
+# 该服务启动后使用的端口
+server:
+  port: 8002
