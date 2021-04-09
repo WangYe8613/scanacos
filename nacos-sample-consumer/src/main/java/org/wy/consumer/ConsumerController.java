@@ -15,4 +15,9 @@ public class ConsumerController {
     public String sayHello(@RequestParam(name = "name") String name) {
         return providerFeign.sayHello(name);
     }
+
+    @GetMapping("/openfeign/testValue")
+    public String getValueFromNacosConfigServer() {
+        return providerFeign.getValueFromNacosConfigServer();
+    }
 }

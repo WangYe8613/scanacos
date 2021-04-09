@@ -8,4 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ProviderFeign {
     @GetMapping("/hi")
     String sayHello(@RequestParam(name = "name") String name);
+
+    @GetMapping("/testValue")
+    String getValueFromNacosConfigServer();
 }
