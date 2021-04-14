@@ -4,6 +4,7 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.wy.provider.blockhandler.BlockHandler;
@@ -54,5 +55,34 @@ public class HelloServiceImpl {
         } else {
             return "降级测试：不发生异常";
         }
+    }
+
+    // 新增一个接口，用于验证热点规则：基础设置
+    @GetMapping(value = "/json")
+    // value 是资源名称，要确保与Sentinel服务中设置的一致且唯一，与Spring的AOP中的切点概念很相似
+    @SentinelResource(value = "getJson")
+    // 这里就不要使用@RequestParam了，否则不管是否在url中填写，入参会一直是被访问状态，这样无法测试热点规则
+    public String getJson(Boolean json1, Boolean json2) {
+
+        if (json1 != null && json1) {
+            return NacosSamplepProviderConstants.json1;
+        }
+        if (json2 != null && json2) {
+            return NacosSamplepProviderConstants.json2;
+        }
+        return NacosSamplepProviderConstants.json3;
+    }
+
+    // 新增一个接口，用于验证热点规则：高级设置
+    @GetMapping(value = "/html/{id}")
+    // value 是资源名称，要确保与Sentinel服务中设置的一致且唯一，与Spring的AOP中的切点概念很相似
+    @SentinelResource(value = "getHtml")
+    // 这里就不要使用@RequestParam了，否则不管是否在url中填写，入参会一直是被访问状态，这样无法测试热点规则
+    public String getHtml(@PathVariable int id) {
+
+        if (id <= 0 || id > 3) {
+            return NacosSamplepProviderConstants.errorHtml;
+        }
+        return NacosSamplepProviderConstants.html[id - 1];
     }
 }
