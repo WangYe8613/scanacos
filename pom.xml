@@ -101,6 +101,13 @@
             <version>2.1.0.RELEASE</version>
         </dependency>
 
+        <!--  引入Nacos数据源依赖包  -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
