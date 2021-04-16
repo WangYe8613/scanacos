@@ -108,6 +108,20 @@
             <version>1.6.3</version>
         </dependency>
 
+        <!--  引入Sleuth依赖包  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+
+        <!--  引入Zipkin依赖包  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>

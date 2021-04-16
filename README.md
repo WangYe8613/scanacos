@@ -31,6 +31,7 @@
 5. [Sentinel：3.Sentinel的基本使用（三）授权规则、系统规则](https://blog.csdn.net/w_y_x_y/article/details/115703915?spm=1001.2014.3001.5501)
 6. [Sentinel：4.Sentinel的高级使用（一）流控规则持久化](https://blog.csdn.net/w_y_x_y/article/details/115735785?spm=1001.2014.3001.5501)
 7. [Sentinel：5.Sentinel的高级使用（二）降级规则持久化](https://blog.csdn.net/w_y_x_y/article/details/115758915?spm=1001.2014.3001.5501)
+8. [Spring Cloud Sleuth结合Zipkin实现链路追踪](https://blog.csdn.net/w_y_x_y/article/details/115770942)
 
 ---
 
